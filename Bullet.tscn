@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cl3oxbmmypvtm"]
 
-[ext_resource type="Script" uid="uid://4wgtlenx5mti" path="res://bullet.gd" id="1_7281b"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_7281b"]
 [ext_resource type="Texture2D" uid="uid://ct30h0ncrm76w" path="res://bullet_O-ezgif.com-rotate.png" id="2_7281b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
@@ -46,7 +46,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 24.0
+"speed": 10.0
 }]
 
 [node name="bullet" type="Area2D"]
@@ -62,7 +62,8 @@ shape = SubResource("RectangleShape2D_u8st5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3iaeh")
-frame_progress = 0.0912459
+autoplay = "default"
+frame_progress = 0.705508
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.8, 0.65)
