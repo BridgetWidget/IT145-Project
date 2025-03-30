@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://cl3oxbmmypvtm"]
+
+[ext_resource type="Script" uid="uid://4wgtlenx5mti" path="res://bullet.gd" id="1_7281b"]
+[ext_resource type="Texture2D" uid="uid://ct30h0ncrm76w" path="res://bullet_O-ezgif.com-rotate.png" id="2_7281b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
+size = Vector2(22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s4u5"]
+atlas = ExtResource("2_7281b")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7281b"]
+atlas = ExtResource("2_7281b")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8st5"]
+atlas = ExtResource("2_7281b")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7awvy"]
+atlas = ExtResource("2_7281b")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rjr3"]
+atlas = ExtResource("2_7281b")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3iaeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s4u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7281b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8st5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7awvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rjr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_7281b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_u8st5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3iaeh")
+frame_progress = 0.0912459
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.8, 0.65)
+
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
