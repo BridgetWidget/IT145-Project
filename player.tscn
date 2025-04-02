@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxvdsmbmfywcv"]
+[gd_scene load_steps=26 format=3 uid="uid://ctiigfp7pt32e"]
 
 [ext_resource type="Texture2D" uid="uid://0pgtmwiu7an0" path="res://knight.png" id="1_7j2l0"]
-[ext_resource type="Script" uid="uid://cc0pjqg888mim" path="res://player.gd" id="1_sary1"]
+[ext_resource type="Script" path="res://player.gd" id="1_sary1"]
 [ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Gun.tscn" id="3_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57ob8"]
@@ -162,22 +162,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
-radius = 6.0
-height = 20.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pxa"]
+radius = 5.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(1, -12)
 collision_layer = 9
 collision_mask = 9
 safe_margin = 0.001
 script = ExtResource("1_sary1")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_24n6b")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.371524
 
 [node name="Gun" parent="." instance=ExtResource("3_i3pqv")]
 position = Vector2(0, 5)
@@ -187,10 +180,14 @@ offset_left = -2.0
 offset_top = -46.0
 offset_right = 2.0
 offset_bottom = -19.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_24n6b")
+animation = &"Run"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("CapsuleShape2D_i3pqv")
+modulate = Color(0, 0, 1, 1)
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_66pxa")

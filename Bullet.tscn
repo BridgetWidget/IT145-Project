@@ -1,52 +1,52 @@
 [gd_scene load_steps=10 format=3 uid="uid://cl3oxbmmypvtm"]
 
-[ext_resource type="Script" uid="uid://4wgtlenx5mti" path="res://bullet.gd" id="1_7281b"]
-[ext_resource type="Texture2D" uid="uid://ct30h0ncrm76w" path="res://bullet_O-ezgif.com-rotate.png" id="2_7281b"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_7281b"]
+[ext_resource type="Texture2D" uid="uid://bku0oej2fmvfa" path="res://bullet O-Sheet.png" id="3_u0s76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
 size = Vector2(22, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4s4u5"]
-atlas = ExtResource("2_7281b")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad7wi"]
+atlas = ExtResource("3_u0s76")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7281b"]
-atlas = ExtResource("2_7281b")
-region = Rect2(0, 48, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jau2a"]
+atlas = ExtResource("3_u0s76")
+region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8st5"]
-atlas = ExtResource("2_7281b")
-region = Rect2(0, 96, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx87t"]
+atlas = ExtResource("3_u0s76")
+region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7awvy"]
-atlas = ExtResource("2_7281b")
-region = Rect2(0, 144, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5fvx"]
+atlas = ExtResource("3_u0s76")
+region = Rect2(144, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rjr3"]
-atlas = ExtResource("2_7281b")
-region = Rect2(0, 192, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc2ni"]
+atlas = ExtResource("3_u0s76")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3iaeh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4s4u5")
+"texture": SubResource("AtlasTexture_ad7wi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7281b")
+"texture": SubResource("AtlasTexture_jau2a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u8st5")
+"texture": SubResource("AtlasTexture_fx87t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7awvy")
+"texture": SubResource("AtlasTexture_b5fvx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1rjr3")
+"texture": SubResource("AtlasTexture_gc2ni")
 }],
 "loop": true,
 "name": &"default",
-"speed": 24.0
+"speed": 11.0
 }]
 
 [node name="bullet" type="Area2D"]
@@ -60,9 +60,10 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_u8st5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3iaeh")
-frame_progress = 0.0912459
+autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.8, 0.65)
