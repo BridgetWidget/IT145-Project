@@ -191,3 +191,9 @@ autoplay = "Idle"
 modulate = Color(0, 0, 1, 1)
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_66pxa")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.07
+one_shot = true
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
