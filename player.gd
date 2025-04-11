@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+class_name player
+
+
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 const SPEED = 130.0
@@ -33,3 +37,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_collision_shape_2d_tree_entered():
+	pass # Replace with function body.
+
+
+func _on_Bullet_area_entered(area):
+	if velocity.x == 0 || velocity.y == 0:
+		print("trump")

@@ -1,2 +1,1 @@
-extends EnemyClass
-#  class_name MySubClass extends MyBaseClass
+class_name EPinkBullet extends "res://EBullet.gd"
