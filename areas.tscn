@@ -175,7 +175,7 @@ sources/0 = SubResource("TileSetAtlasSource_kmahy")
 
 [node name="World" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["tile"]]
 position = Vector2(64, -1)
 tile_set = SubResource("TileSet_3i8b0")
 format = 2

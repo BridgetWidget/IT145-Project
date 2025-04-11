@@ -3,19 +3,18 @@ extends Area2D
 @export var speed = 100  # Increase speed if necessary
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var bullettype
-var booooob = 3
-var BlueBullet
-
-
+var booooob = 1
+var Booblet
 func _ready():
 	set_as_top_level(true)
 	if booooob == 1:
 		animated_sprite_2d.play("pink")
+		Booblet = EPinkBullet.new()
 	if booooob == 2:
 		animated_sprite_2d.play("default")
 	if booooob == 3:
 		animated_sprite_2d.play("blue")
-		BlueBullet = EBlueBullet.new()
+		Booblet = EBlueBullet.new()
 		
 	
 	#put some things to change sprite based on input(i want 
@@ -30,12 +29,15 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_bullet_body_entered(body):
+	if body.is_in_group("tile"):
+		self.queue_free()
 	if booooob == 1:
 		CBoooob(body)
+		Booblet.PBoooob(body,$".")
 	if booooob == 2:
 		animated_sprite_2d.play("default")
 	if booooob == 3:
-		BlueBullet.BBoooob(body)
+		Booblet.BBoooob(body,$".")
 # if sprite is = to blagh blagh and blagh it calls different boobs
 		
 func CBoooob(body):
