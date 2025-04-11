@@ -1,5 +1,5 @@
 extends Area2D
-
+#class_name MyBaseClass
 @export var speed = 100  # Increase speed if necessary
 var bullettype
 
@@ -12,7 +12,7 @@ func _ready():
 
 func _physics_process(delta):
 	position += Vector2.RIGHT.rotated(rotation) * speed * delta  # Move in the correct direction
-# make this become a process that stupidly changes the sprite by increments of 1
+
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 

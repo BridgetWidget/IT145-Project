@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dhwqs67u3crhb"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_hbrve"]
+[ext_resource type="Script" path="res://EBullet.gd" id="1_dnsi6"]
 [ext_resource type="Texture2D" uid="uid://dwygllxxns6e4" path="res://bullet B-Sheet.png" id="2_cqmhh"]
 [ext_resource type="Texture2D" uid="uid://bku0oej2fmvfa" path="res://bullet O-Sheet.png" id="3_8lw2a"]
 [ext_resource type="Texture2D" uid="uid://bnyobr44ascee" path="res://bullet P-Sheet.png" id="4_4qpkp"]
@@ -134,7 +134,7 @@ animations = [{
 [node name="bullet" type="Area2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_hbrve")
+script = ExtResource("1_dnsi6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 0)
@@ -145,6 +145,7 @@ shape = SubResource("RectangleShape2D_u8st5")
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3iaeh")
+animation = &"pink"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.8, 0.65)

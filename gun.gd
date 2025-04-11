@@ -1,3 +1,4 @@
+#Christian made this
 extends Sprite2D
 @onready var progress_bar_2: ProgressBar = $"../ProgressBar2"
 
