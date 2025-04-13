@@ -7,9 +7,11 @@ func _process(delta):
 	pass
 
 # version for blue bullet
-func BBoooob(body, nip):
+func BlueeBullet(body, bob):
 	if body.is_in_group("player"):
 		if ((Game.player.velocity.x != 0) || (Game.player.velocity.y != 0)):
-			nip.queue_free()
+			bob.queue_free()
+			Game.player.position.x = -63
+			Game.player.position.y = -10
 	if body != get_parent():
 		pass

@@ -58,6 +58,12 @@ runright={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Tilemap"
+2d_physics/layer_2="Player"
+2d_physics/layer_8="Enemys"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

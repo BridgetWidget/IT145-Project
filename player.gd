@@ -16,6 +16,7 @@ func _ready():
 
 	
 func _physics_process(delta):
+	Game.player = self
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

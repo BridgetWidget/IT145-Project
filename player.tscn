@@ -167,14 +167,14 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 11
+collision_mask = 11
 safe_margin = 0.001
 script = ExtResource("1_sary1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(0, 8)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_66pxa")
 
 [node name="Gun" parent="." instance=ExtResource("3_i3pqv")]
@@ -195,16 +195,20 @@ autoplay = "Idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 process_callback = 0
+limit_bottom = 400
+limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(0, 8)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_66pxa")
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]
