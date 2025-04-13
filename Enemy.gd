@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 130
 @export var flip = false
-var move = Vector2(speed,0)
+var move = Vector2(speed,10)
 @onready var tile_map = get_parent().get_node("TileMap")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction =1
@@ -17,4 +17,3 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-

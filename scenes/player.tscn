@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://ctiigfp7pt32e"]
 
 [ext_resource type="Texture2D" uid="uid://0pgtmwiu7an0" path="res://knight.png" id="1_7j2l0"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wdkfo"]
+[ext_resource type="Script" uid="uid://c3lgem3rjyp3j" path="res://Scripts/player.gd" id="1_wdkfo"]
 [ext_resource type="Texture2D" uid="uid://2vck28j0dqfe" path="res://walk.shit-Sheet.png" id="3_ip3up"]
 [ext_resource type="Texture2D" uid="uid://cx614r6bwhn25" path="res://B-O main-Sheet.png" id="4_vlvd5"]
 [ext_resource type="Texture2D" uid="uid://drtddw28mwmo0" path="res://O-B main-Sheet.png" id="5_53rnp"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://ctiigfp7pt32e"]
 
 [ext_resource type="Texture2D" uid="uid://0pgtmwiu7an0" path="res://knight.png" id="1_7j2l0"]
-[ext_resource type="Script" path="res://player.gd" id="1_sary1"]
+[ext_resource type="Script" uid="uid://cc0pjqg888mim" path="res://player.gd" id="1_sary1"]
 [ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Gun.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pxa"]
