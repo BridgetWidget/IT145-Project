@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1x2s60dynt4b"]
 
-[ext_resource type="Texture2D" uid="uid://cwwql5gncrwh2" path="res://sGun.png" id="1_fry05"]
-[ext_resource type="Script" path="res://gun.gd" id="2_7c1qe"]
+[ext_resource type="Texture2D" uid="uid://cs2r7icio87qq" path="res://Assets/Sprites/sGun.png" id="1_fry05"]
+[ext_resource type="Script" uid="uid://cnom7wkay5ymg" path="res://Assets/Scripts/gun.gd" id="2_7c1qe"]
 
 [node name="Gun" type="Sprite2D"]
 position = Vector2(-2, -2)
@@ -11,6 +11,8 @@ centered = false
 script = ExtResource("2_7c1qe")
 
 [node name="muzzle" type="Marker2D" parent="."]
+visible = false
+modulate = Color(0.219608, 0, 1, 0.988235)
 position = Vector2(26, 4)
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,10 +1,10 @@
+#Christian made this
 extends Sprite2D
 @onready var progress_bar_2: ProgressBar = $"../ProgressBar2"
 
 
 var can_fire = true
-var bullet = load("res://Bullet.tscn")
-
+var bullet = load("res://Assets/Scenes/Bullet.tscn")
 func _ready():
 	set_as_top_level(false)
 func _physics_process(delta):

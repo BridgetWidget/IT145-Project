@@ -1,12 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhwqs67u3crhb"]
+[gd_scene load_steps=23 format=3 uid="uid://dhwqs67u3crhb"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_hbrve"]
-[ext_resource type="Texture2D" uid="uid://dwygllxxns6e4" path="res://bullet B-Sheet.png" id="2_cqmhh"]
-[ext_resource type="Texture2D" uid="uid://bku0oej2fmvfa" path="res://bullet O-Sheet.png" id="3_8lw2a"]
-[ext_resource type="Texture2D" uid="uid://bnyobr44ascee" path="res://bullet P-Sheet.png" id="4_4qpkp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
-size = Vector2(22, 20)
+[ext_resource type="Script" uid="uid://bldw6ekgi1skc" path="res://Assets/Scripts/EBullet.gd" id="1_dnsi6"]
+[ext_resource type="Texture2D" uid="uid://o4v5tbvmrdgl" path="res://Assets/Sprites/bullet B-Sheet.png" id="2_cqmhh"]
+[ext_resource type="Texture2D" uid="uid://237gv0heukiq" path="res://Assets/Sprites/bullet O-Sheet.png" id="3_8lw2a"]
+[ext_resource type="Texture2D" uid="uid://b65bop4jjnmqp" path="res://Assets/Sprites/bullet P-Sheet.png" id="4_4qpkp"]
+[ext_resource type="PackedScene" uid="uid://c61ctssaovi5d" path="res://Assets/Scenes/Kill_Zone.tscn" id="5_2iqjj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60yby"]
 atlas = ExtResource("2_cqmhh")
@@ -131,15 +129,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="bullet" type="Area2D"]
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("1_hbrve")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
+size = Vector2(22, 20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_u8st5")
+[node name="bullet" type="Area2D" groups=["bullet"]]
+rotation = 6.28319
+collision_layer = 67
+collision_mask = 67
+script = ExtResource("1_dnsi6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
@@ -149,5 +146,12 @@ sprite_frames = SubResource("SpriteFrames_3iaeh")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.8, 0.65)
 
-[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered" flags=18]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited" flags=18]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_u8st5")
+
+[node name="KillZone" parent="." instance=ExtResource("5_2iqjj")]
+
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

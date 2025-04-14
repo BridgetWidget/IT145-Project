@@ -12,14 +12,19 @@ func _ready():
 
 func _physics_process(delta):
 	position += Vector2.RIGHT.rotated(rotation) * speed * delta  # Move in the correct direction
-
+# make this become a process that stupidly changes the sprite by increments of 1
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_bullet_body_entered(body):
-	if is_in_group("enemy_bullet") and body.is_in_group("player"):
-		body.kill()
-	
+	if body.is_in_group("tile"):
+		self.queue_free
+	if body.is_in_group("enemy"):
+		self.queue_free
+		body.queue_free()
+	if body.is_in_group("bullet"):
+		self.queue_free
+		body.queue_free()
 	if body != get_parent():
 		queue_free()
 

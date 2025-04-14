@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bld5wem7y0mxv"]
+
+[ext_resource type="AudioStream" uid="uid://csdvnd8axawer" path="res://Assets/Music/PM-Desert3.wav" id="1_a7blx"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_a7blx")
+autoplay = true

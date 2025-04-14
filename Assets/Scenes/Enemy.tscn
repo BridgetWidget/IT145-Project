@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctw0jmexic1yl"]
+
+[ext_resource type="Script" uid="uid://cqudlercfw5wn" path="res://Assets/Scripts/Enemy.gd" id="1_7m8pt"]
+[ext_resource type="Texture2D" uid="uid://bhsai3wt1dc8w" path="res://Assets/Sprites/knight.png" id="1_c8fvt"]
+[ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Assets/Scenes/Gun.tscn" id="3_e6d4v"]
+[ext_resource type="Script" uid="uid://dx38tyo8i6hdh" path="res://Assets/Scripts/EnemyGun.gd" id="4_qp131"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr316"]
+atlas = ExtResource("1_c8fvt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unbif"]
+atlas = ExtResource("1_c8fvt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0ir"]
+atlas = ExtResource("1_c8fvt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5jnq"]
+atlas = ExtResource("1_c8fvt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq5wa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr316")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unbif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe0ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5jnq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1lo3"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(8, 1)
+
+[node name="Enemy2" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 129
+collision_mask = 129
+script = ExtResource("1_7m8pt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jq5wa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_c1lo3")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(7, 0)
+target_position = Vector2(0, 15)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Gun" parent="." instance=ExtResource("3_e6d4v")]
+script = ExtResource("4_qp131")
+
+[node name="Timer2" type="Timer" parent="Gun"]
+wait_time = 1.7
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="timeout" from="Gun/Timer2" to="Gun" method="_on_timer_2_timeout"]
