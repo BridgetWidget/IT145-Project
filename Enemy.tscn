@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctw0jmexic1yl"]
+[gd_scene load_steps=12 format=3 uid="uid://ctw0jmexic1yl"]
 
 [ext_resource type="Script" uid="uid://pnbtm7gqgkk7" path="res://Enemy.gd" id="1_7m8pt"]
 [ext_resource type="Texture2D" uid="uid://0pgtmwiu7an0" path="res://knight.png" id="1_c8fvt"]
+[ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Gun.tscn" id="3_e6d4v"]
+[ext_resource type="Script" uid="uid://cl1c5x14dsmiy" path="res://EnemyGun.gd" id="4_qp131"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vr316"]
 atlas = ExtResource("1_c8fvt")
@@ -68,4 +70,11 @@ target_position = Vector2(0, 15)
 position = Vector2(4, 0.5)
 shape = SubResource("RectangleShape2D_s7bn3")
 
+[node name="Gun" parent="." instance=ExtResource("3_e6d4v")]
+script = ExtResource("4_qp131")
+
+[node name="Timer2" type="Timer" parent="Gun"]
+wait_time = 3.0
+
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="timeout" from="Gun/Timer2" to="Gun" method="_on_timer_2_timeout"]

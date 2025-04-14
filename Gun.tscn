@@ -11,6 +11,8 @@ centered = false
 script = ExtResource("2_7c1qe")
 
 [node name="muzzle" type="Marker2D" parent="."]
+visible = false
+modulate = Color(0.219608, 0, 1, 0.988235)
 position = Vector2(26, 4)
 
 [node name="Timer" type="Timer" parent="."]

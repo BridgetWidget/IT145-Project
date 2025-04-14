@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-class_name player
 
 var build_mode = false
 
@@ -53,7 +52,6 @@ func Get_velocityx():
 	return(velocity.x)
 func Get_velocityy():
 	return(velocity.y)
-	
 func _input(event):
 	if event.is_action_pressed("Jump"):
 		build_mode = true

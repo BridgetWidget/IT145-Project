@@ -6,7 +6,7 @@ var bullettype
 var Bullet_object
 var rng = RandomNumberGenerator.new()
 var Type_of_bullet = floor(randf_range(1.0 , 3.99)) #= rng.randf_range(1, 3)
-
+var direc = 1
 
 func _ready():
 	set_as_top_level(true)
@@ -21,7 +21,7 @@ func _ready():
 		
 	
 func _physics_process(delta):
-	position += Vector2.RIGHT.rotated(rotation) * speed * delta  # Move in the correct direction
+	position += Vector2.RIGHT.rotated(rotation) * speed * delta * direc  # Move in the correct direction
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
