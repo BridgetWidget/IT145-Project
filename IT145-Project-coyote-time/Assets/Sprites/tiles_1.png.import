@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwwql5gncrwh2"
-path="res://.godot/imported/sGun.png-308b0766992e19d5a8b733c1086d1385.ctex"
+uid="uid://cjohmu1tufatu"
+path="res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sGun.png"
-dest_files=["res://.godot/imported/sGun.png-308b0766992e19d5a8b733c1086d1385.ctex"]
+source_file="res://Assets/Sprites/tiles_1.png"
+dest_files=["res://.godot/imported/tiles_1.png-caae9e096ed63b671bb0775098168e12.ctex"]
 
 [params]
 
