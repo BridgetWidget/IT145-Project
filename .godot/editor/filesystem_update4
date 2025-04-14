@@ -1,0 +1,12 @@
+res://world.tscn
+res://player.tscn
+res://Gun.tscn
+res://Bullet.tscn
+res://bulletenemy.tscn
+res://areas.tscn
+res://Kill_Zone.tscn
+res://Enemy.tscn
+res://EnemyGun.gd
+res://player.gd
+res://Enemy.gd
+res://EBullet.gd

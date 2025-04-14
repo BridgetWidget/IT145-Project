@@ -1,0 +1,46 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1744507424
+areas.tscn::PackedScene::2389822989908666809::1744507334::0::1::::<><>::uid://cjohmu1tufatu::::res://tiles_1.png<>uid://ctiigfp7pt32e::::res://player.tscn<>uid://c61ctssaovi5d::::res://Kill_Zone.tscn<>uid://ctw0jmexic1yl::::res://Enemy.tscn
+B-O main-Sheet.png::CompressedTexture2D::6452811852132985312::1743182353::1743182354::1::::<><>::
+bullet B-Sheet.png::CompressedTexture2D::8753346237253486625::1743366376::1743366376::1::::<><>::
+bullet O-Sheet.png::CompressedTexture2D::3131139826319025102::1743366379::1743366380::1::::<><>::
+bullet P-Sheet.png::CompressedTexture2D::3349273479792209796::1743366373::1743366374::1::::<><>::
+bullet.gd::GDScript::-1::1744477769::0::1::::<>Area2D<>::
+Bullet.tscn::PackedScene::5603612407315689950::1744507334::0::1::::<><>::res://bullet.gd<>uid://bku0oej2fmvfa::::res://bullet O-Sheet.png
+bulletenemy.tscn::PackedScene::7697005561913216643::1744507334::0::1::::<><>::res://EBullet.gd<>uid://dwygllxxns6e4::::res://bullet B-Sheet.png<>uid://bku0oej2fmvfa::::res://bullet O-Sheet.png<>uid://bnyobr44ascee::::res://bullet P-Sheet.png<>uid://c61ctssaovi5d::::res://Kill_Zone.tscn
+bullet_O-ezgif.com-rotate.png::CompressedTexture2D::6165763732279296292::1743362607::1743363237::1::::<><>::
+default_bus_layout.tres::AudioBusLayout::7100035723143977336::1743364287::0::1::::<><>::
+EBlueBullet.gd::GDScript::-1::1744392022::0::1::::EBlueBullet<>Area2D<>::
+EBullet.gd::GDScript::-1::1744482598::0::1::::<>Area2D<>::
+Enemy.gd::GDScript::-1::1744507325::0::1::::<>CharacterBody2D<>::
+Enemy.tscn::PackedScene::6153380341577672467::1744507390::0::1::::<><>::res://Enemy.gd<>uid://0pgtmwiu7an0::::res://knight.png
+EnemyClass.gd::GDScript::-1::1743786348::0::1::::<>Node2D<>::
+EnemyGun.gd::GDScript::-1::1744493733::0::1::::<>Sprite2D<>::
+EPinkBullet.gd::GDScript::-1::1744393486::0::1::::EPinkBullet<>Area2D<>::
+export_presets.cfg::TextFile::-1::1742783303::0::1::::<><>::
+Game.gd::GDScript::-1::1744349008::0::1::::<>Node<>::
+gun.gd::GDScript::-1::1743784876::0::1::::<>Sprite2D<>::
+Gun.tscn::PackedScene::9033325844119379759::1744507334::0::1::::<><>::uid://cwwql5gncrwh2::::res://sGun.png<>res://gun.gd
+icon.svg::CompressedTexture2D::4742737565581443746::1742853288::1742853288::1::::<><>::
+Kill_Zone.gd::GDScript::-1::1744478122::0::1::::<>Area2D<>::
+Kill_Zone.tscn::PackedScene::7002525679086812583::1744507334::0::1::::<><>::res://Kill_Zone.gd
+knight.png::CompressedTexture2D::1786085653959865235::1742853288::1743363237::1::::<><>::
+music.tscn::PackedScene::3212627400593540615::1744478787::0::1::::<><>::uid://5pck0f65g2ys
+O-B main-Sheet.png::CompressedTexture2D::8391884277352710005::1743182358::1743182359::1::::<><>::
+player.gd::GDScript::-1::1744492955::0::1::::player<>CharacterBody2D<>::
+player.tscn::PackedScene::6123441156510432338::1744507334::0::1::::<><>::uid://0pgtmwiu7an0::::res://knight.png<>res://player.gd<>uid://d1x2s60dynt4b::::res://Gun.tscn
+PM-Desert3.wav::AudioStreamWAV::2136771589633081822::1743364212::1743364245::1::::<><>::
+progress_bar.gd::GDScript::-1::1743362607::0::1::::<>ProgressBar<>::
+README.md::TextFile::-1::1742853278::0::1::::<><>::
+sGun.png::CompressedTexture2D::6363404939192804777::1743362607::1743363237::1::::<><>::
+tiles_1.png::CompressedTexture2D::5433889788683669090::1743609993::1743614620::1::::<><>::
+timer.gd::GDScript::-1::1743362607::0::1::::<>Timer<>::
+time_for_adventure.mp3::AudioStreamMP3::9155427906166835112::1743008861::1743008862::1::::<><>::
+walk.shit-Sheet.png::CompressedTexture2D::1938591472538174966::1743182361::1743182361::1::::<><>::
+world.tscn::PackedScene::8936510905071825036::1744507334::0::1::::<><>::uid://ctiigfp7pt32e::::res://player.tscn
+::res://scenes/::1743363566
+Music.tscn::PackedScene::6418617000137937215::1743363566::0::1::::<><>::uid://cwo4pgh1hdu6d
+player.tscn::PackedScene::6123441156510432338::1743363566::0::1::::<><>::uid://0pgtmwiu7an0
+world.tscn::PackedScene::8936510905071825036::1743363565::0::1::::<><>::uid://ctiigfp7pt32e
+::res://Scripts/::1743183354
+player.gd::GDScript::-1::1743183354::0::1::::<>CharacterBody2D<>::
