@@ -1,3 +1,8 @@
+# Christian burke, nathanael early, Bridget mason, yash
+# Prof Bancroft
+# due 4/13 and 4/20
+
+# bridget expands upon the movement system by adding cyotetime grace period
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

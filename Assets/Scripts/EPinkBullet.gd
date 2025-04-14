@@ -1,3 +1,5 @@
+#NE A child of the enemy bullet that you can pary if you are in the air and holding space
+
 class_name EPinkBullet extends "res://Assets/Scripts/EBullet.gd"
 #Yash
 

@@ -2,7 +2,6 @@
 extends Node
 
 
-
 var current_area = 1
 var area_path = "res://Assets/Scenes/Areas/"
 

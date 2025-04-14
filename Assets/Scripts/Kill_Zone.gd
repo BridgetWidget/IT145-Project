@@ -1,3 +1,4 @@
+#NE Kills you when you go under de map
 extends Area2D
 @onready var timer: Timer = $Timer
 

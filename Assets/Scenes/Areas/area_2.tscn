@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bki4lffcvgav7"]
+[gd_scene load_steps=10 format=3 uid="uid://bki4lffcvgav7"]
 
 [ext_resource type="Texture2D" uid="uid://dxk7txtjak28c" path="res://Assets/Sprites/tiles_1.png" id="1_iybe0"]
 [ext_resource type="PackedScene" uid="uid://c61ctssaovi5d" path="res://Assets/Scenes/Kill_Zone.tscn" id="2_nenjx"]
 [ext_resource type="PackedScene" uid="uid://ctiigfp7pt32e" path="res://Assets/Scenes/player.tscn" id="2_vfcf2"]
 [ext_resource type="PackedScene" uid="uid://dvj84rkcjga14" path="res://Assets/Scenes/portal_nope.tscn" id="3_vfcf2"]
 [ext_resource type="PackedScene" uid="uid://pae31po4i7b8" path="res://Assets/Scenes/area_door.tscn" id="5_ma1mr"]
+[ext_resource type="PackedScene" uid="uid://ctw0jmexic1yl" path="res://Assets/Scenes/Enemy.tscn" id="6_5tyl7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ma1mr"]
 texture = ExtResource("1_iybe0")
@@ -118,3 +119,9 @@ scale = Vector2(1.00217, 1)
 
 [node name="area door" parent="." instance=ExtResource("5_ma1mr")]
 position = Vector2(860, -80)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_5tyl7")]
+position = Vector2(369, -165)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_5tyl7")]
+position = Vector2(622, -180)

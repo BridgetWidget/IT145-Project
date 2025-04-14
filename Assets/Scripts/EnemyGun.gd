@@ -1,4 +1,4 @@
-#Christian made this
+#Christian and nathan The enemys gun. also an evolution of the normal gun
 extends Sprite2D
 @onready var player = get_tree().current_scene.get_node('Player')
 @onready var enemy_2: CharacterBody2D = $".."

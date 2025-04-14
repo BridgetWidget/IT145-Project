@@ -1,3 +1,5 @@
+# NE && CB This is a modified bullet to shoot different children bullets
+
 extends Area2D
 #class_name MyBaseClass
 @export var speed = 100  # Increase speed if necessary

@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var speed = 100  # Increase speed if necessary
+#CB Bullet for the player
 var bullettype
 
 func _ready():

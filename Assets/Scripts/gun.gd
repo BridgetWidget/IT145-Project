@@ -2,7 +2,7 @@
 extends Sprite2D
 @onready var progress_bar_2: ProgressBar = $"../ProgressBar2"
 
-
+#CB Shoots bullets for player
 var can_fire = true
 var bullet = load("res://Assets/Scenes/Bullet.tscn")
 func _ready():

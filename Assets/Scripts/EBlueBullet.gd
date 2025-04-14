@@ -1,3 +1,4 @@
+#NE child of the enemy Bullet that doesnt hit you if yur standing still
 class_name EBlueBullet extends "res://Assets/Scripts/EBullet.gd"
 # Called when the node enters the scene tree for the first time.
 

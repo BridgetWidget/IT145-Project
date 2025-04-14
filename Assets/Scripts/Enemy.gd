@@ -1,3 +1,5 @@
+# CB A badguy who walks and detects infron of him and the floor infront as well
+
 extends CharacterBody2D
 
 @onready var muzzle: Marker2D = $muzzle
