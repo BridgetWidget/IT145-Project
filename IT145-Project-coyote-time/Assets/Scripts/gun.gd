@@ -4,7 +4,7 @@ extends Sprite2D
 
 
 var can_fire = true
-var bullet = load("res://Bullet.tscn")
+var bullet = load("res://Assets/Scenes/Bullet.tscn")
 
 func _ready():
 	set_as_top_level(false)
