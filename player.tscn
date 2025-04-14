@@ -1,8 +1,12 @@
 [gd_scene load_steps=26 format=3 uid="uid://ctiigfp7pt32e"]
 
 [ext_resource type="Texture2D" uid="uid://0pgtmwiu7an0" path="res://knight.png" id="1_7j2l0"]
-[ext_resource type="Script" path="res://player.gd" id="1_sary1"]
+[ext_resource type="Script" uid="uid://cc0pjqg888mim" path="res://player.gd" id="1_sary1"]
 [ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Gun.tscn" id="3_i3pqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pxa"]
+radius = 5.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57ob8"]
 atlas = ExtResource("1_7j2l0")
@@ -162,15 +166,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pxa"]
-radius = 5.0
-height = 16.0
-
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 9
-collision_mask = 9
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 11
+collision_mask = 11
 safe_margin = 0.001
 script = ExtResource("1_sary1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_66pxa")
 
 [node name="Gun" parent="." instance=ExtResource("3_i3pqv")]
 position = Vector2(0, 5)
@@ -187,7 +192,25 @@ sprite_frames = SubResource("SpriteFrames_24n6b")
 animation = &"Run"
 autoplay = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_bottom = 400
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color(0, 0, 1, 1)
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_66pxa")
+
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="tree_entered" from="Area2D/CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]

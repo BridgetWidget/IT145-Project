@@ -2,14 +2,21 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+var build_mode = false
+
+@onready var animated_sprite_2d = $AnimatedSprite2D
+
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	Game.player = self
 
 	
 func _physics_process(delta):
+	Game.player = self
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -33,3 +40,21 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_collision_shape_2d_tree_entered():
+	pass # Replace with function body.
+
+
+func _on_Bullet_area_entered(area):
+	if velocity.x == 0 || velocity.y == 0:
+		print("trump")
+func Get_velocityx():
+	return(velocity.x)
+func Get_velocityy():
+	return(velocity.y)
+func _input(event):
+	if event.is_action_pressed("Jump"):
+		build_mode = true
+	if event.is_action_released("Jump"):
+		build_mode = false
