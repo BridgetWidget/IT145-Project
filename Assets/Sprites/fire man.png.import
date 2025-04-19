@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwygllxxns6e4"
-path="res://.godot/imported/bullet B-Sheet.png-79e0d0f1364a5e77819473bef10f733f.ctex"
+uid="uid://cytct6rmwohg5"
+path="res://.godot/imported/fire man.png-b9fd2709c3cd1dc3da6733865da1f8cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bullet B-Sheet.png"
-dest_files=["res://.godot/imported/bullet B-Sheet.png-79e0d0f1364a5e77819473bef10f733f.ctex"]
+source_file="res://Assets/Sprites/fire man.png"
+dest_files=["res://.godot/imported/fire man.png-b9fd2709c3cd1dc3da6733865da1f8cd.ctex"]
 
 [params]
 

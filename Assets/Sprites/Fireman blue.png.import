@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0pgtmwiu7an0"
-path="res://.godot/imported/knight.png-e78b6e5166df60917cb4b885a289c963.ctex"
+uid="uid://c2tjd7qxxgkcq"
+path="res://.godot/imported/Fireman blue.png-20323efffef5dfafdd05f868a28a23f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://knight.png"
-dest_files=["res://.godot/imported/knight.png-e78b6e5166df60917cb4b885a289c963.ctex"]
+source_file="res://Assets/Sprites/Fireman blue.png"
+dest_files=["res://.godot/imported/Fireman blue.png-20323efffef5dfafdd05f868a28a23f5.ctex"]
 
 [params]
 

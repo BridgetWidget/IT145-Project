@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct30h0ncrm76w"
-path="res://.godot/imported/bullet_O-ezgif.com-rotate.png-8f8b251639fdb7fa95e9db661364feef.ctex"
+uid="uid://dj1k6vhngd80w"
+path="res://.godot/imported/idle sprite.png-fd72e2c20851966d32e214d00b4f0f7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bullet_O-ezgif.com-rotate.png"
-dest_files=["res://.godot/imported/bullet_O-ezgif.com-rotate.png-8f8b251639fdb7fa95e9db661364feef.ctex"]
+source_file="res://Assets/Sprites/idle sprite.png"
+dest_files=["res://.godot/imported/idle sprite.png-fd72e2c20851966d32e214d00b4f0f7f.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

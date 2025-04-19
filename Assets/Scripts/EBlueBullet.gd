@@ -7,10 +7,10 @@ func _process(delta):
 	pass
 
 # version for blue bullet
-func BlueeBullet(body, bob):
+func BlueeBullet(body, father):
 	if body.is_in_group("player"):
 		if ((Game.player.velocity.x != 0) || (Game.player.velocity.y != 0)):
-			bob.queue_free()
-			get_tree().reload_current_scene()
+			father.queue_free()
+			father.get_tree().reload_current_scene()
 	if body != get_parent():
 		pass

@@ -45,6 +45,12 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+# play some funky animations baby
+	if direction ==0 :
+		animated_sprite_2d.play("Idle")
+	else:
+		animated_sprite_2d.play("Run")
+
 	#BR - variable for coyote time
 	var was_on_floor = is_on_floor()
 
@@ -70,8 +76,10 @@ func Get_velocityy():
 func _input(event):
 	if event.is_action_pressed("Jump"):
 		build_mode = true
+		Game.player.build_mode = true
 	if event.is_action_released("Jump"):
 		build_mode = false
+		Game.player.build_mode = false
 
 func _on_coyote_timer_timeout():
 	can_coyote_jump = false
