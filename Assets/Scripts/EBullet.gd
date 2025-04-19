@@ -8,7 +8,7 @@ extends Area2D
 var bullettype
 var Bullet_object
 var rng = RandomNumberGenerator.new()
-var Type_of_bullet = 1#floor(randf_range(1.0 , 3.99)) #= rng.randf_range(1, 3)
+var Type_of_bullet = floor(randf_range(1.0 , 3.99)) #= rng.randf_range(1, 3)
 var direc = 1
 
 func _ready():

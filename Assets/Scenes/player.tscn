@@ -188,11 +188,6 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation_1",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t1xgp"]
@@ -220,8 +215,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_24n6b")
 animation = &"Run"
-autoplay = "Run"
-frame_progress = 0.454532
+autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
