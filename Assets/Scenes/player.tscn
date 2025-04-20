@@ -218,14 +218,17 @@ animation = &"Run"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 process_callback = 0
-limit_bottom = 400
-limit_smoothed = true
-position_smoothing_enabled = true
+limit_bottom = 600
 position_smoothing_speed = 50.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -315.0
+offset_top = -160.0
+offset_right = -205.0
+offset_bottom = -115.0
+text = "Deaths: 0"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

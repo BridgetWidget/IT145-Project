@@ -28,7 +28,7 @@ func _physics_process(delta):
 			bullet_instance.scale.x = -1# botoom correct top worng = -1
 		bullet_instance.global_position = $muzzle.global_position
 		self.add_child(bullet_instance)
-		can_fire = false
+		can_fire = false# turn this back to false later
 		timer_2.start()
 
 func Set_Inv(flips):

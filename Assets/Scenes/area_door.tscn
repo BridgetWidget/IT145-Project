@@ -97,5 +97,6 @@ shape = SubResource("RectangleShape2D_0wpsa")
 sprite_frames = SubResource("SpriteFrames_f8i5k")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.489765
 
 [connection signal="body_entered" from="." to="." method="_on_door_entered"]

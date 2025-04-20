@@ -16,4 +16,5 @@ func _on_body_entered(body):
 
 
 func _on_timer_timeout():
+	Game.Death += 1
 	get_tree().reload_current_scene()

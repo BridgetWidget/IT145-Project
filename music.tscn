@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxphxi7uux4rr"]
+[gd_scene load_steps=2 format=3 uid="uid://cq80kds03w2t2"]
 
 [ext_resource type="AudioStream" uid="uid://csdvnd8axawer" path="res://Assets/Music/PM-Desert3.wav" id="1_hto2r"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
-position = Vector2(397, 184)
 stream = ExtResource("1_hto2r")
 volume_db = 7.495
 autoplay = true
+max_distance = 1e+08
+attenuation = 1e-05

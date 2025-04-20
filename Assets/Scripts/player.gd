@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var build_mode = false
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var label: Label = $Camera2D/Label
 
 var can_coyote_jump = false
 
@@ -15,10 +16,10 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var fuckyou = ""
 func _ready():
 	Game.player = self
-
+	label.text = "Deaths: " + str(Game.Death)
 	
 func _physics_process(delta):
 	Game.player = self

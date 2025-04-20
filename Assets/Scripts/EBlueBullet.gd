@@ -10,6 +10,7 @@ func _process(delta):
 func BlueeBullet(body, father):
 	if body.is_in_group("player"):
 		if ((Game.player.velocity.x != 0) || (Game.player.velocity.y != 0)):
+			Game.Death += 1
 			father.queue_free()
 			father.get_tree().reload_current_scene()
 	if body != get_parent():
