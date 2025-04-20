@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://bg0wkw7urq5qo"]
+
+[ext_resource type="Script" uid="uid://bpr0ndn4mvuem" path="res://boss.gd" id="1_lnbgr"]
+[ext_resource type="Texture2D" uid="uid://pcgc1o4ddi4c" path="res://Assets/Sprites/Fireman boss.png" id="2_o1i15"]
+[ext_resource type="PackedScene" uid="uid://d1x2s60dynt4b" path="res://Assets/Scenes/Gun.tscn" id="3_we8h1"]
+[ext_resource type="Script" uid="uid://dx38tyo8i6hdh" path="res://Assets/Scripts/EnemyGun.gd" id="4_kvofc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef0k6"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry61v"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kles1"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etj48"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lj5"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(128, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1j2"]
+atlas = ExtResource("2_o1i15")
+region = Rect2(160, 0, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km2bi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Bigboom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef0k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry61v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kles1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etj48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1j2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"prep",
+"speed": 5.0
+}]
+
+[node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_lnbgr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_km2bi")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.345849
+
+[node name="Gun" parent="." instance=ExtResource("3_we8h1")]
+script = ExtResource("4_kvofc")
+
+[node name="Timer2" type="Timer" parent="Gun"]
+
+[node name="BigBoyMove" type="Timer" parent="."]
+wait_time = 0.001
+autostart = true
+
+[node name="Ticker" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -20)
+
+[node name="Forehead" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 1)
+
+[connection signal="timeout" from="Gun/Timer2" to="Gun" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="BigBoyMove" to="." method="_on_big_boy_move_timeout"]
+[connection signal="timeout" from="Ticker" to="." method="_on_ticker_timeout"]

@@ -84,3 +84,4 @@ animations = [{
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_wsjn2")
 autoplay = "default"
+frame_progress = 0.211894

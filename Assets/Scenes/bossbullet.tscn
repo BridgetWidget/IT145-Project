@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bilul526yufdu"]
+
+[ext_resource type="Script" uid="uid://ghcl32h16gcq" path="res://bossbullet.gd" id="1_f3r3g"]
+[ext_resource type="Texture2D" uid="uid://o4v5tbvmrdgl" path="res://Assets/Sprites/bullet B-Sheet.png" id="2_h4rv2"]
+[ext_resource type="PackedScene" uid="uid://c61ctssaovi5d" path="res://Assets/Scenes/Kill_Zone.tscn" id="5_msmvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60yby"]
+atlas = ExtResource("2_h4rv2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fh27"]
+atlas = ExtResource("2_h4rv2")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njfio"]
+atlas = ExtResource("2_h4rv2")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aseu2"]
+atlas = ExtResource("2_h4rv2")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pk34"]
+atlas = ExtResource("2_h4rv2")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3iaeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60yby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fh27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njfio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aseu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pk34")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8st5"]
+size = Vector2(22, 20)
+
+[node name="Bossbullet" type="Area2D" groups=["bullet"]]
+rotation = 6.28319
+collision_layer = 67
+collision_mask = 67
+script = ExtResource("1_f3r3g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3iaeh")
+animation = &"blue"
+autoplay = "blue"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.8, 0.65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_u8st5")
+
+[node name="KillZone" parent="." instance=ExtResource("5_msmvj")]
+
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
