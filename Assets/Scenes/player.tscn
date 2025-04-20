@@ -224,10 +224,10 @@ limit_bottom = 600
 position_smoothing_speed = 50.0
 
 [node name="Label" type="Label" parent="Camera2D"]
-offset_left = -315.0
-offset_top = -160.0
-offset_right = -205.0
-offset_bottom = -115.0
+offset_left = -40.0
+offset_top = -74.0
+offset_right = 33.0
+offset_bottom = -51.0
 text = "Deaths: 0"
 
 [node name="Area2D" type="Area2D" parent="."]
