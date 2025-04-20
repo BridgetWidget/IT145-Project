@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0a00f4vr20yj"
+path="res://.godot/imported/Rick Astley - Never Gonna Give You Up (Official Music Video).mp3-c406d8f7f2a0d771f9cc06b9e572f6ee.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Rick Astley - Never Gonna Give You Up (Official Music Video).mp3"
+dest_files=["res://.godot/imported/Rick Astley - Never Gonna Give You Up (Official Music Video).mp3-c406d8f7f2a0d771f9cc06b9e572f6ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

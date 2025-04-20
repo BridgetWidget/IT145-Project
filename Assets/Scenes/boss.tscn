@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg0wkw7urq5qo"]
+[gd_scene load_steps=13 format=3 uid="uid://bg0wkw7urq5qo"]
 
 [ext_resource type="Script" uid="uid://bpr0ndn4mvuem" path="res://boss.gd" id="1_lnbgr"]
 [ext_resource type="Texture2D" uid="uid://pcgc1o4ddi4c" path="res://Assets/Sprites/Fireman boss.png" id="2_o1i15"]
@@ -65,7 +65,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Boss" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ydte"]
+height = 50.0
+
+[node name="Boss" type="CharacterBody2D" groups=["boss"]]
+collision_layer = 129
+collision_mask = 129
 script = ExtResource("1_lnbgr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -73,6 +78,7 @@ sprite_frames = SubResource("SpriteFrames_km2bi")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.345849
+flip_h = true
 
 [node name="Gun" parent="." instance=ExtResource("3_we8h1")]
 script = ExtResource("4_kvofc")
@@ -91,6 +97,9 @@ position = Vector2(-1, -20)
 
 [node name="Forehead" type="Marker2D" parent="Sprite2D"]
 position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4ydte")
 
 [connection signal="timeout" from="Gun/Timer2" to="Gun" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="BigBoyMove" to="." method="_on_big_boy_move_timeout"]

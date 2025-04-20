@@ -23,6 +23,9 @@ func _on_bullet_body_entered(body):
 	if body.is_in_group("enemy"):
 		self.queue_free
 		body.queue_free()
+	if body.is_in_group("boss") and body.has_method("take_damage"):
+		body.take_damage(1)
+		queue_free()
 	if body.is_in_group("bullet"):
 		self.queue_free
 		body.queue_free()

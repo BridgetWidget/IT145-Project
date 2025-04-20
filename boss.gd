@@ -5,20 +5,7 @@ extends Node2D
 @onready var big_boy_move: Timer = $BigBoyMove
 @onready var forehead: Marker2D = $Sprite2D/Forehead
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
-""" 
-func pew_pew():
-	ploob = (0 - 200+tick)
-	look_at(Vector2(0,ploob))
-	var bullet_inst = bull.instantiate()
-	bullet_inst.rotation = (rotation + randf_range(-0.1, 0.1))
-	bullet_inst.direc = 1 
-	bullet_inst.scale.x = 1
-	bullet_inst.global_position = forehead.global_position
-	self.add_child(bullet_inst)
-	big_boy_move.start()
-	tick += 1
-	"""
+var health = 1
 
 var tick = 0
 var ploob
@@ -32,7 +19,7 @@ func pew_pew():
 	var wave_amplitude = .5
 	
 	var wave_offset = sin(tick * wave_frequency) * wave_amplitude
-	var shoot_angle = deg_to_rad(0) + wave_offset
+	var shoot_angle = deg_to_rad(180) + wave_offset
 	var bullet_inst = bull.instantiate()
 	bullet_inst.rotation = shoot_angle
 	bullet_inst.direc = 1
@@ -64,3 +51,15 @@ func _on_ticker_timeout() -> void:
 	else:
 		time = true
 		ticker.wait_time = 10.0
+
+func take_damage(amount):
+	health -= amount
+	if health <= 0:
+		self.queue_free()
+		if Game.Death >10:
+			get_tree().change_scene_to_file("res://Assets/Scenes/Areas/bad_end.tscn")
+		else:
+			get_tree().change_scene_to_file("res://Assets/Scenes/Areas/good_end.tscn")
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.
