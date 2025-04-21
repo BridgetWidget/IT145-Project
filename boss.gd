@@ -5,7 +5,7 @@ extends Node2D
 @onready var big_boy_move: Timer = $BigBoyMove
 @onready var forehead: Marker2D = $Sprite2D/Forehead
 @onready var sprite_2d: Sprite2D = $Sprite2D
-var health = 1
+var health = 10
 
 var tick = 0
 var ploob
@@ -28,9 +28,7 @@ func pew_pew():
 	get_tree().current_scene.add_child(bullet_inst)
 	tick += 1
 	big_boy_move.start()
-	if tick > 100:
-		tick = 0
-
+	
 func _physics_process(delta):
 	if time == true:
 		big_boy_move.start()

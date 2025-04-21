@@ -641,8 +641,8 @@ position = Vector2(-106, -26)
 
 [node name="Background" type="Sprite2D" parent="TileMap"]
 z_index = -5
-position = Vector2(-92, -290)
-scale = Vector2(2.79514, 2.71142)
+position = Vector2(-90, -228)
+scale = Vector2(4, 3.88)
 texture = ExtResource("4_i7w0t")
 
 [node name="Bench" type="Sprite2D" parent="TileMap"]

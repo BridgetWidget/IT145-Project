@@ -25,6 +25,12 @@ Music="*res://Music.tscn"
 
 project/assembly_name="Nosepounding3.0"
 
+[editor]
+
+movie_writer/mjpeg_quality=0.5
+movie_writer/movie_file="/Users/christianburke/Documents/GitHub/IT145/Untitled/Movies/Movie.avi"
+movie_writer/fps=30
+
 [input]
 
 ui_accept={

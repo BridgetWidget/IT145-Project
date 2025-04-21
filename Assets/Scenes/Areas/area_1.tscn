@@ -664,8 +664,8 @@ position = Vector2(867, -68)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(580, -138)
-scale = Vector2(2.79514, 2.16358)
+position = Vector2(395, -138)
+scale = Vector2(5, 3.147)
 texture = ExtResource("6_nlyig")
 
 [node name="1" type="Sprite2D" parent="."]

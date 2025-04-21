@@ -645,8 +645,8 @@ layer_0/tile_data = PackedInt32Array(65529, 458752, 0, 65530, 524288, 0, 65531, 
 
 [node name="Background" type="Sprite2D" parent="TileMap"]
 z_index = -5
-position = Vector2(438, -180)
-scale = Vector2(2.79514, 2.16358)
+position = Vector2(439, -21)
+scale = Vector2(5, 5)
 texture = ExtResource("2_c68sv")
 
 [node name="2" type="Sprite2D" parent="TileMap"]

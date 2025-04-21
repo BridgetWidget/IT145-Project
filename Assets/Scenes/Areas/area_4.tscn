@@ -635,8 +635,8 @@ layer_0/tile_data = PackedInt32Array(-262149, 589824, 0, -262145, 589824, 0, -32
 
 [node name="Background" type="Sprite2D" parent="TileMap"]
 z_index = -5
-position = Vector2(49, -194.063)
-scale = Vector2(1.37153, 1.3206)
+position = Vector2(44, -143)
+scale = Vector2(3, 2.889)
 texture = ExtResource("2_0jig4")
 
 [node name="4" type="Sprite2D" parent="TileMap"]

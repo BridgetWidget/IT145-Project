@@ -1,6 +1,6 @@
 #Christian made this
 extends Sprite2D
-@onready var progress_bar_2: ProgressBar = $"../ProgressBar2"
+@onready var progress_bar_2: ProgressBar = $"../Control/ProgressBar2"
 
 #CB Shoots bullets for player
 var can_fire = true
@@ -18,8 +18,8 @@ func _physics_process(delta):
 		can_fire = false
 		progress_bar_2.value = 0 
 func _on_timer_timeout() -> void:
-	progress_bar_2.value += 1
-	if progress_bar_2.value == 60:
+	progress_bar_2.value += 5
+	if progress_bar_2.value == 100:
 		can_fire = true
 	
 

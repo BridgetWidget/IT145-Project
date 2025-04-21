@@ -13,7 +13,8 @@ func _ready():
 func _on_body_entered(body):
 	print("you died")
 	timer.start()
-
+	Game.Death += 1
+	get_tree().reload_current_scene()
 
 func _on_timer_timeout():
 	Game.Death += 1
