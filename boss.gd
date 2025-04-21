@@ -5,8 +5,8 @@ extends Node2D
 @onready var big_boy_move: Timer = $BigBoyMove
 @onready var forehead: Marker2D = $Sprite2D/Forehead
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var progress_bar: ProgressBar = $Control/ProgressBar
 var health = 10
-
 var tick = 0
 var ploob
 var time = false
@@ -52,12 +52,13 @@ func _on_ticker_timeout() -> void:
 
 func take_damage(amount):
 	health -= amount
+	
 	if health <= 0:
 		self.queue_free()
 		if Game.Death >10:
 			get_tree().change_scene_to_file("res://Assets/Scenes/Areas/bad_end.tscn")
 		else:
 			get_tree().change_scene_to_file("res://Assets/Scenes/Areas/good_end.tscn")
-
+	progress_bar.value -= 10
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.

@@ -101,6 +101,20 @@ position = Vector2(0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4ydte")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -56.0
+offset_right = 36.0
+offset_bottom = -29.0
+value = 100.0
+
 [connection signal="timeout" from="Gun/Timer2" to="Gun" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="BigBoyMove" to="." method="_on_big_boy_move_timeout"]
 [connection signal="timeout" from="Ticker" to="." method="_on_ticker_timeout"]
